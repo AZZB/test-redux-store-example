@@ -57,7 +57,7 @@ function* loginFlow() {
 function* auth(payload) {
   try {
     /**
-      we can dispatch here an action for dispaly loading LOGIN_FAILED
+      we can dispatch here an action for dispaly loading SPINNER
     */
     const { token, user } = yield call(Api.login, payload);
     localStorage.setItem('token@', token);
