@@ -28,8 +28,8 @@ export default function* authWatch() {
 function* signup() {
   while(true) {
     try {
-      yield put(logoutRequest())
       const action = yield take(SIGNUP_REQUEST);
+      yield put(logoutRequest())
       const result = yield call(Api.signup, action.payload);
       yield put(signupSuccess());
     } catch (e) {
